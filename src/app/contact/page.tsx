@@ -11,7 +11,7 @@ const ContactPage = () => {
         message: '',
     })
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target
         setFormData((prevData) => ({
             ...prevData,
@@ -19,13 +19,16 @@ const ContactPage = () => {
         }))
     }
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
+        const target = e.target as HTMLFormElement;
+
         emailjs
-            .sendForm('service_zv7z5ke', 'template_wv24bjp', e.target, 'x77H_bpnGuCQcWTrZ')
+            .sendForm('service_zv7z5ke', 'template_wv24bjp', target , 'x77H_bpnGuCQcWTrZ')
             .then(
                 (result) => {
+                    console.log(result);
                     Swal.fire({
                         title: 'Message Sent!',
                         text: 'Your message was sent successfully.',
@@ -52,7 +55,7 @@ const ContactPage = () => {
                 Contact Me
             </h1>
             <h2 className="text-lg sm:text-lg md:text-xl text-center text-gray-600 dark:text-gray-300 mb-8">
-                Interested in working together or have a question? Don't hesitate to contact me. I'm open to new opportunities and collaborations. Let's connect!
+                Interested in working together or have a question? Don&apos;t hesitate to contact me. I&apos;m open to new opportunities and collaborations. Let&apos;s connect!
             </h2>
             <div className="mb-6 flex flex-col items-center">
                 <div>

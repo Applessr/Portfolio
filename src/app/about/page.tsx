@@ -65,7 +65,7 @@ const AboutPage = () => {
                 <h2 className="mt-4 text-xl font-semibold text-gray-800 dark:text-gray-200">
                     Sasita Srisura
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">"Apple"</p>
+                <p className="text-gray-600 dark:text-gray-400">Apple</p>
             </div>
 
             {/* Personal Information Section */}
