@@ -1,5 +1,4 @@
 "use client"
-import { metadata } from './metadata'; 
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "./components/NavBar";
